@@ -29,15 +29,15 @@ PR_FLU = 48
 PR_LEP = 21
 PR_LYM = 41
 PR_RAB = 25
-PR_FLE =
-PR_FVI =
-
+PR_FLE = 35
+PR_FVI = 30
 
 PR_ALL = 0
 
 PR_CHEWS_SMALL = 9.99
 PR_CHEWS_MED = 11.99
 PR_CHEWS_LARGE = 13.99
+PR_CHEWS_FELINE = 8.00
 
 #define global variables
 
@@ -141,8 +141,16 @@ def display_dog_results():
         
 
 ############# CAT functions #############
-def get_cata_data():
-    print("CAT DATA")
+def get_cat_data():
+    global pet_vax_type, num_chews
+    catmenu = "\n** Feline Vaccines: \n\t1.Leukemia \n\t2.Viral Rhinotracheitis \n\t3.Rabies \n\t4.Full Vaccine Package"
+    pet_vax_type = int(input(catmenu + "\n** Enter the vaccine number: "))
+
+    print("\nMonthly heart worm prevention medication is recommended for all cats.")
+    heart_yesno = input("\tWould you like to order monthly heartworm medication for " + pet_name + " (Y/N)? ")
+    if heart_yesno.upper() == "Y":
+        num_chews = int(input("\tHow many heart worm chews would you like to order? "))
+
 
 def perform_cat_calculations():
     global vax_cost, vax_name, chews_cost, total
@@ -150,25 +158,28 @@ def perform_cat_calculations():
     ##### vaccines
 
     if pet_vax_type == 1:
-        vax_cost = PR_BORD
-        vax_name = "Bordatella"
+        vax_cost = PR_FLE
+        vax_name = "Feline Leukemia"
 
     elif pet_vax_type == 2:
-        vax_cost = PR_DAPP
-        vax_name = "DAPP"
+        vax_cost = PR_FVI
+        vax_name = "Feline Viral Rhinotracheitis"
 
     elif pet_vax_type == 3:
-        vax_cost = PR_FLU
-        vax_name = "Influenza"
-
-    elif pet_vax_type == 4:
-        vax_cost = PR_LEP
-        vax_name = "Leptospirosis"
+        vax_cost = PR_RAB
+        vax_name = "Rabies"
 
     else:
-        PR_ALL = PR_BORD + PR_DAPP + PR_FLU
-        vax_cost = .85 * PR_ALL
+        PR_ALL = PR_FLE + PR_FVI + PR_RAB
+        vax_cost = .90 * PR_ALL
         vax_name = "Full Vax Package"
+##### heart worm chews
+    if num_chews != 0 :
+        chews_cost = 8.00 * num_chews
+
+    #####find total
+    total = vax_cost + chews_cost
+        
 
 def display_cat_results():
     print("---------------------")
@@ -182,5 +193,3 @@ def display_cat_results():
 
 ########## call on main program to execute ##########
 main()
-            
-                        
