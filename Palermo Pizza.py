@@ -1,106 +1,121 @@
-# Name: Edward Watson
-# Prog Purpose: This program finds the cost of a customers Palermo Pizza Order
-
-# PIZZA Pricing
-#-------------------------------------
-# Pizza:
-#  1. Small $9.99
-#  2. Medium   $12.99
-#  3. Large   $17.99
-#  4. Extra Large   $21.99
-
-#  5. Drinks   $3.99 each
-#  6. Order of Breadsticks $6.99
+#Name: Edward Watson & Joey Lindgren
+#Program Purpose: This program finds the cost of movie tickets
+# Price for small pizza: $9.99
+# Price for medium pizza: $12.99
+# Price for large pizza: $17.99
+# Price for extra large pizza: $21.99
+# Price for drink: $3.99
+# Price for breadsticks: $6.99
+# Sales tax rate: 5.5%
 
 import datetime
 
-############# define global variables #############
-# define Pizza prices
-PR_SM = 9.99
-PR_MED = 12.99
-PR_LG = 17.99
-PR_XLG = 21.99
+################# define global variables #####################
 
-PR_DRINK = 3.99
-PR_BREAD = 6.99
+SM = 9.99
+MED = 12.99
+LRG = 17.99
+XL  = 21.99
+PR_DRINKS = 3.99
+PR_BRSTX = 6.99
+SALE_TAX = .055
+num_small = 0
+cost_small=0
+num_medium = 0
+cost_medium=0
+num_large = 0
+cost_large = 0
+num_xl = 0
+cost_xl = 0
+num_drinks = 0
+cost_drinks = 0
+num_breadstix = 0
+cost_breadstix = 0
+type_pizza = 0
+more = 0
+subtotal = 0
+taxamt = 0
+total = 0
 
-#define global variables
+################# define program funtions #####################
 
-############ define program functions #############
 def main():
+
     more = True
+
     while more:
-        get_pizza_data()
-        perform_pizza_calculations()
-        display_pizza_results()
-       
-        askAgain = input("\nWould you like to order another pizza(Y/N)?: ")
-        if askAgain.upper() == "N":
+        get_user_data()
+        perform_calculations()
+        display_result()
+
+        askAgain = input("\nWould you like to order again (Y or N)?: ")
+        if askAgain.upper() == "N" or askAgain == "n":
             more = False
-            print('Thank you for ordering Palermo Pizza! ')
-            
-############# Pizza funtions ############
+            print ("Thank you for order. Enjoy your Food!")
 
-def get_pizza_data():
-    global pizza_type, drink_sel, breadstick_sel
-    pizzamenu = "\n** Pizza Sizes: \n\t1.Small Pizza \n\t2.Medium Pizza \n\t3.Large Pizza \n\t4.Extra Large Pizza"
-    pizza_type = int(input(pizzamenu + "\n** Choose your pizza size: "))
 
-    drink_sel = input("\tWould you like to order a drink with your" + pizza_type + " (Y/N)? ")
-    if drink_sel.upper() == "Y":
-            drink_type = int(input("\tHow many drinks would you like? "))
-            
-    breadstick_sel = input("\tWould you like an order of breadsticks?" + " (Y/N)? ")
-    if breadstick_sel.upper() == "Y":
-            breadstick_type = int(input("\tHow many orders of breadsticks would you like? "))    
-        
-def perform_pizza_calculations():
-    global pizza_cost, drink_cost, breadstick_cost, sub_total, Sales_tax_amt, total
 
-   
-    if pizza_type == 1:
-        pizza_cost = PR_SM
-        
-    elif pizza_type == 2:
-        pizza_cost = PR_MED
-
-    elif pizza_type == 3:
-        pizza_cost = PR_LG
-
-    else pizza_type == 4:
-        pizza_cost = PR_XLG
-        
-    if drink_sel == "Y":
-        drink_cost = PR_DRINK * drink_type
-
-    else drink_type == "N":
-        drink_cost = 0.00
-
-    if breadstick_type = "Y":
-        breadstick_cost = PR_BREAD * breadstick_type
-
-    else breadstick_type == "N":
-        breadstick_cost = 0.00
-
+def get_user_data():
+    global nuMED, num_drinks, num_breadstix, type_pizza, num_small, num_medium, num_large, num_xl
     
-    #####find total
-    subtotal = pizza_cost + drink_cost + breadstick_cost
-    sales tax = subtotal * 0.055
-    total = subtotal + sales tax
+    type_pizza = int(input("Type of Pizza would like \n1 for Small \n2 for Medium \n3 for Large \n4 for Extra - Large\nSize: "))
+    if type_pizza == 1:
+        num_small = int(input("Number of Small pizzas: "))
 
+    elif type_pizza == 2:
+        num_medium = int(input("Number of Medium pizzas: "))
 
-def display_pizza_results():
-    print("---------------------")
-    print('***Palermo Pizza***')
-    print('***datetime***')
-    print('Number of Pizzas: 1')
-    print('Number of Drinks: ') + (drink_type)
-    print('Number of Breadsticks: ') + (breadstick_type)
-    print('Subtotal: $ ' + format(subtotal, '8,.2f'))
-    print('Sales Tax: $ ' + format(sales tax, '8,.2f'))
-    print('Total Cost: $ ' + format(total, '8,.2f'))
+    elif type_pizza ==  3:
+        num_large = int(input("Number of Large pizzas: "))
+    
+
+    elif type_pizza == 4:
+        num_xl = int(input("Number of Extra Large pizzas: "))
         
+    else:
+        print('This option is not available')
+        get_user_data()
 
+    more = int(input("\nWould you like to order a different size?\n1 for Yes\n2 for No\nInput: "))
+    if more == 1:
+        get_user_data()
+
+    else:
+        num_drinks = int(input("\nNumber of drinks: "))
+        num_breadstix = int(input("Number of breadsticks: "))
+
+
+def perform_calculations():
+
+    global cost_small, cost_medium, cost_large, cost_xl, cost_drinks, cost_breadstix, taxamt, total, subtotal
+    cost_small = num_small*SM
+    cost_medium= num_medium*MED
+    cost_large= num_large*LRG
+    cost_xl= num_xl*XL 
+    cost_drinks= num_drinks*PR_DRINKS
+    cost_breadstix= num_breadstix*PR_BRSTX
+    subtotal = cost_small+cost_medium+cost_large+cost_xl+cost_drinks+cost_breadstix
+    taxamt = subtotal*SALE_TAX
+    total = subtotal+taxamt
+
+def display_result():  
+    moneyformat  = '8,.2f'
+    print ('******* Palermo Pizza *******')
+    print ('Small Pizza    '+ str(num_small)+'x       $' + format(cost_small, moneyformat))
+    print ('Medium Pizza   '+ str(num_medium)+'x      $' + format(cost_medium, moneyformat))
+    print ('Large Pizza    '+ str(num_large)+'x       $' + format(cost_large, moneyformat))
+    print ('X-Large Pizza  '+ str(num_xl)+'x          $' + format(cost_xl, moneyformat))
+    print ('Drinks         '+ str(num_drinks)+'x      $' + format(cost_drinks, moneyformat))
+    print ('Bread Sticks   '+ str(num_breadstix)+'x   $' + format(cost_breadstix, moneyformat))
+    print ('Subtotal:      $'+format(subtotal, moneyformat))
+    print ('Tax:           $'+format(taxamt, moneyformat))
+    print ('Total:         $'+format(total, moneyformat))
+    print (str(datetime.datetime.now()))
 
 ########## call on main program to execute ##########
+
 main()
+    
+
+
+        
