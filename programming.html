@@ -24,7 +24,7 @@ a:active{
 </style>
 </head>
 
-<body style="background-color:#000000; font-family: Arial, Helvetica, sans-serif; background-image: url(halloweenpumpkin.jpg)";>
+<body style="background-color:#000000; font-family: Arial, Helvetica, sans-serif; background-image: url(Chapter5img.jpg)";>
 
 <table border = "3" style ="width:50%; color:#c14b05; background-color: #f7b951; margin: auto;">
 <tr style = "background-color:#c14b05;">
@@ -48,130 +48,89 @@ a:active{
 </tr>
 <tr>
     <td><h3>Phases of computer program development:</h3></td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 1: Understand the problem</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 2: Design an algorithm to solve the problem</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 3: Write the program code in appropriate language based on the algorithm.</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 4: Enter the program and save</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 5: Execute the program</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 6: Test the program, find errors and debug, then retest</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Phase 7: Document and evaluate the program</td>
-    <td colspan="4"></td>
+    <td colspan="4">
+        <li> Phase 1: Understand the problem  </li><br>
+        <li> Phase 2: Design an algorithm to solve the problem </li><br>
+        <li> Phase 3: Write the program code in apporiate language based on the algorithm </li><br>
+        <li> Phase 4: Enter the program and save </li><br>
+        <li> Phase 5: Execute the program </li><br>
+        <li> Phase 6: Test the program find errors and debug, then retest </li><br>
+        <li> Phase 7: Document and evaluate the program </li><br>
+    </td>
 </tr>
 <tr>
     <td><h3>Programming Structures</h3></td>
-    <td colspan="4"></td>
+    <td colspan="4">
+        <li> Sequential structure: Top-down execution </li><br>
+        <li> Decision structures: if/then/else </li><br> 
+        <li> Iterative (Looping): 
+            <ul> while loop: continue looping as long something is true </ul>
+            <ul> repeat/until loop: continue looping until something is true </ul>
+            <ul> for loop: loop a given number of times </ul>
+    </td>
 </tr>
 <tr>
-    <td>Sequential structure: Top-down execution</td>
-    <td colspan="4"> </td>
-</tr>
-<tr>
-    <td>Decision structures: if/then/else</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Interactive (Looping):</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Recursive structures:</td>
-    <td colspan="4"></td>
+    <td><h3>Recursive structures</h3></td>
+    <td colspan="4">
+        <li> Repeat a set of instructions as subtask of itself </li>
+        <li> Repeation continues until: </li>
+        <ul>
+            <li> degenerative case, which is a termination condition, is met </li>
+            <li> (degenerative) case is also called a "base case" </li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <td><h3>Two classic programming/database problems</h3></td>
-    <td colspan="4"> </td>
-</tr>
-<tr>
-    <td>Sorting:</td>
-    <td colspan="4"></td>
-</tr>
-<tr>
-    <td>Searching:</td>
-    <td colspan="4"></td>
+    <td colspan="4">
+        <li> Sorting: Descending order/Ascending order </li>
+        <ul>
+            <li> Sorting numbers </li>
+            <li> Sorting strings (in accrodance with ASCII values) </li><br>
+        </ul>
+        <li> Searching: Find specific data that meet a certain criteria </li>
+        <ul> 
+            <li> In database: </li>
+                <ul>
+                    <li> Filters: temporary search </li>
+                    <li> Queries: search criteria are saved so they don't have to be recreated </li><br>
+                </ul>
+    </td>
 </tr>
 <tr>
     <td><h3>Two popular search techniques:</h3></td>
-    <td colspan="4"></td>
+    <td colspan="4">
+        <li> Sequential search: search from top to bottom or bottom to top, one item at a time </li>
+        <li> Binary Search: </li>
+            <ul> 
+                <li> only works if data is sorted first </li>
+                <li> start in the middle, then go to half of that, etc. </li>
+    </td>
 </tr>
-<tr>
-    <td>Sequential search</td>
-    <td colspan="4">The internal part of an operating system</td>
-</tr>
-<tr>
-    <td>Binary search</td>
-    <td colspan="4">A component of the kernel which are the software units that communicate with the controllers (or at times, directly with the peripheral devices) to carry out operations on the peripheral devices attached to the machine.</td>
-</tr>
-<tr>
     <td><h3>Two classic program goals:</h3></td>
-    <td colspan="4">An older user interface that communicated with users through textual messages using a keyboard and monitor screen.</td>
+    <td colspan="4">
+        <li> Efficiency: Program takes minimal time and/or resources </li><br>
+        <li> Correctness: Program runs in expected ways and works for all expected conditions </li>
+    </td>
 </tr>
 <tr>
-    <td>Efficiency:</td>
-    <td colspan="4">Coordinates the use of the machine's mass storage facilities. </td>
+    <td><h3>Software Testing and Verification</h3></td>
+    <td colspan="4">
+        <li> Kinds of tests: </li>
+        <ul>
+            <li> Acceptance testing: Verifying whether the whole system works as intended. </li><br>
+            <li> Interegation testing: Ensuring that software components or functions operate together. </li><br>
+            <li> Unit testing: Validating that each software unit performs as expected. A unit is the smallest testable component of an application. </li><br>
+            <li> Functional testing: Checking functions by emulating business scenarios, based on functional requirements. Black-box testing is a common way to verify functions. </li><br>
+            <li> Performance testing: Testing how the software performs under different workloads. Load testing, for example, is used to evaluate performance under real-life load conditions. </li><br>
+            <li> Regression testing: Checking whether new features break or degrade functionality. Sanity testing can be used to verify menus, functions and commands at the surface level, when there is no time for a full regression test. </li><br>
+            <li> Stress testing: Testing how much strain the system can take before it fails. Considered to be a type of non-functional testing. </li><br>
+            <li> Usability testing: Validating how well a customer can use a system or web application to complete a task. </li><br>
+        </ul>
+    </td>
 </tr>
 <tr>
-    <td>Correctness:</td>
-    <td colspan="4">Coordinates the machine's use of main memory. </td>
-</tr>
-<tr>
-    <td colspan="5"><h3>Software Testing and Verification</h3></td>
-</tr>
-<tr>
-    <td><h3>Kinds of tests:</h3></td>
-    <td colspan="4">Found on <a href="https://www.ibm.com/topics/software-testing"> https://www.ibm.com/topics/software-testing </a></td>
-</tr>
-<tr>
-    <td>Acceptance testing:</td>
-    <td colspan="4">Read-only Memory is special nonvolatile memory that can be read but not altered</td>
-</tr>
-<tr>
-    <td>Integration testing:</td>
-    <td colspan="4">A resource allocation problem in which two or more processes are blocked from progressing because each is waiting for a resource that is allocated to another.</td>
-</tr>
-<tr>
-    <td>Unit Testing:</td>
-    <td colspan="4">A technique of holding data for output at a later but more convenient time.</td>
-</tr>
-<tr>
-    <td>Functional testing:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
-</tr>
-<tr>
-    <td>Performance testing:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
-</tr>
-<tr>
-    <td>Regression testing:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
-</tr>
-<tr>
-    <td>Stress testing:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
-</tr>
-<tr>
-    <td>Usability testing:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
+    <td colspan="5">Found on <a href="https://www.ibm.com/topics/software-testing"> https://www.ibm.com/topics/software-testing </a></td>
 </tr>
 <tr>
     <td><h3>Software testing is done to detect:</h3></td>
@@ -187,23 +146,23 @@ a:active{
 </tr>
 <tr>
     <td>Continous testing</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
+    <td colspan="4">Project teams test each build as it becomes available. This type of software testing relies on test automation that is integrated with the deployment process. It enables software to be validated in realistic test environments earlier in the process – improving design and reducing risks.</td>
 </tr>
 <tr>
     <td>Configuration Management:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
+    <td colspan="4">Organizations centrally maintain test assets and track what software builds to test. Teams gain access to assets such as code, requirements, design documents, models, test scripts and test results. Good systems include user authentication and audit trails to help teams meet compliance requirements with minimal administrative effort. </td>
 </tr>
 <tr>
     <td>Servic virtualization:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
+    <td colspan="4">Testing environments may not be available, especially early in code development. Service virtualization simulates the services and systems that are missing or not yet completed, enabling teams to reduce dependencies and test sooner. They can reuse, deploy and change a configuration to test different scenarios without having to modify the original environment. </td>
 </tr>
 <tr>
     <td>Defect or "bug tracking":</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
+    <td colspan="4">Monitoring defects is important to both testing and development teams for measuring and improving quality. Automated tools allow teams to track defects, measure their scope and impact, and uncover related issues. </td>
 </tr>
 <tr>
     <td>Metrics and reporting:</td>
-    <td colspan="4">Several methods of security authorization meant to provide users more protection</td>
+    <td colspan="4">Reporting and analytics enable team members to share status, goals and test results. Advanced tools integrate project metrics and present results in a dashboard. Teams quickly see the overall health of a project and can monitor relationships between test, development and other project elements. </td>
 </tr>
 <tr>
     <td colspan="5"><a href="https://www.ibm.com/topics/software-testing">From: IBM What is Software testing?</h3></td>
